@@ -32,7 +32,7 @@ class Main:
                     mb1 = messagebox.askyesno('Update available', f'{_AppName_} {__version__} can be updated to version {data}')
                     if mb1 is True:
                         # Replace the file with your url online with this below:
-                        webbrowser.open_new_tab('')
+                        webbrowser.open_new_tab('https://github.com/dhavals1212/Food-server-robot-software/blob/main/Updates/mysetup.exe?raw=true')
                         parent.destroy()
                     else:
                         pass
