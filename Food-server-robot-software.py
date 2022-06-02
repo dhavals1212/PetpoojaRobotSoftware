@@ -14,7 +14,6 @@ __version__ = '1.1'
 __maintainer__ = 'Dhaval Shukla'
 __email__ = 'dhaval.shukla912@gmail.com'
 __status__ = 'Beta'
-
 _AppName_ = 'Food server robot software'
 
 class Main:
@@ -23,16 +22,16 @@ class Main:
             try:
                 # -- Online version of the file.
                 # -- Replace the url of the older one with the one below.
-                response - requests.get(
-                    'https://github.com/dhavals1212/Food-server-robot-software/blob/main/version.txt')
+                response = requests.get(
+                    'https://raw.githubusercontent.com/dhavals1212/PetpoojaRobotSoftware/main/version.txt')
                 data = response.text
 
                 if float(data) > float(__version__):
                     messagebox.showinfo('Software Update', 'A new update is available!')
-                    mb1 = messagebox.askyesno('Update available', f'{_AppName_} {__version__} can be updated to version {data}')
+                    mb1 = messagebox.askyesno('Update available', f'{_AppName_} v{__version__} can be updated to version {data}\n\nWould you like to update now?')
                     if mb1 is True:
                         # Replace the file with your url online with this below:
-                        webbrowser.open_new_tab('https://github.com/dhavals1212/Food-server-robot-software/blob/main/Updates/RobotSoftware.exe?raw=true')
+                        webbrowser.open_new_tab('https://github.com/dhavals1212/PetpoojaRobotSoftware/blob/main/Updates/PetpoojaRobotSoftware.exe?raw=true')
                         parent.destroy()
                     else:
                         pass
@@ -41,14 +40,14 @@ class Main:
             except Exception as e:
                 messagebox.showinfo('Software update', 'Unable to check for update, Error:' + str(e))
 
-        button1 = ttk.Button(parent, text='Check for updates', command=check_updates)
+        button1 = ttk.Button(parent, text='Update', command=check_updates)
         button1.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
 
 def main():
     root = tk.Tk()
     root.title(_AppName_ + ' ' + str(__version__))
     root.geometry('400x150')
-    root.resizable(width=False, height=False)
+    root.resizable(width=True, height=True)
     label = tk.Label(root, text="Hello Dhaval")
     label.pack()
     root.wm_iconbitmap('Images/petpooja.ico')#Path stored locally on PC.
