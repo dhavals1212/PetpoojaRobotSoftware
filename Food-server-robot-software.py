@@ -51,7 +51,7 @@ def main():
     root.resizable(width=False, height=False)
     label = tk.Label(root, text="Hello Dhaval")
     label.pack()
-    root.wm_iconbitmap(r'E:/Projects/Python/Tkinter-MyTestApp-master/images/Graphicloads-Android-Settings-Contact.ico')#Path stored locally on PC.
+    root.wm_iconbitmap('Images/petpooja.ico')#Path stored locally on PC.
     Main(root)
     root.mainloop()
 
